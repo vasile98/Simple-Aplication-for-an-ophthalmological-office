@@ -1,3 +1,8 @@
+/**
+ * Frame for the Panel1 with the 2 buttons
+ * 
+ * @author Antohi Vasile
+ */
 package old;
 import java.awt.*;
 import java.awt.event.WindowEvent;

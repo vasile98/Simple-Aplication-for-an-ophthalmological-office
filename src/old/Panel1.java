@@ -1,3 +1,8 @@
+/**
+ * Panel with 2 buttons to choose a new patient or to change the information of an old patient
+ * 
+ * @author Vasile Antohi
+ */
 package old;
 import java.awt.BorderLayout;
 import java.awt.Dimension;

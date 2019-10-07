@@ -1,3 +1,9 @@
+/**
+ * Frame with the previous consultation of a patient 
+ * 
+ * @author Vasile Antohi
+ */
+
 package old;
 
 import java.awt.Container;

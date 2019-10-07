@@ -1,3 +1,8 @@
+/**
+ * A class to manage insertion and  of information from the database
+ * 
+ *@author Vasile Antohi
+ */
 package old;
 
 import java.sql.*;
