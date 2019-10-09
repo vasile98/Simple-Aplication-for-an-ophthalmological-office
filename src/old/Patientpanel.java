@@ -1,3 +1,10 @@
+/** 
+ * The main panel of the aplication where the user can insert information into the database 
+ * 
+ * 
+ * @author Vasile Antohi
+ */
+
 package old;
 import java.awt.print.PageFormat;
 import java.awt.print.Printable;
@@ -122,22 +129,27 @@ public class Patientpanel extends JPanel {
 	 protected String nameForUpdate;
 	 private JScrollPane pane;
 	
-	
+	/**
+	 * If the constructor is used without an parameter that means that user is inserting a new patient
+	 */
 	public Patientpanel()
 	{   
 		
-		// 0 inseamna ca trebuie inregistrat un nou pacient
+		// 0 means that this panel is used to add a new patient
 		window = 0;
 		
 	    bildGUI();
 		
 		
     }
-	
+	/**
+	 * If the constructor is used with a parameter that means that user is changing the data of an old patient and the user interface needs to display the old information from database 
+	 * 
+	 */
 	public Patientpanel (String name)
-	{   // inseamna ca trebuie reinoita informatia in baza de date
+	{   // 1 means that panel is used for an old patient and the information needs to be updated in database 
 		window = 1;
-		//memoram numele pentru reinoirea informatieie 
+		//remembering the name of the patient to update the information in database 
 		nameForUpdate = name;
 		ArrayList<String> dataArrayList = new ArrayList<String>();
 		
@@ -181,6 +193,10 @@ public class Patientpanel extends JPanel {
 		
 	}
 	
+	/**
+	 * This is the function builds the GUI 
+	 * Components a separated into panels 
+	 */
 	public void bildGUI ()
 	{
         JPanel mainJPanel = new JPanel();
@@ -431,7 +447,9 @@ public class Patientpanel extends JPanel {
 	
 	
 	
-	
+	/**
+	 * Adds functionality to buttons
+	 */
 	public void addListeners()
 	{
 		backButton.addActionListener(new ActionListener() {
@@ -466,7 +484,9 @@ public class Patientpanel extends JPanel {
 			}
 		});
 	}
-	
+	/**
+	 * This function is used to save information about a patient into  database 
+	 */
 	public void savingData()
 	{
 		
@@ -523,6 +543,9 @@ public class Patientpanel extends JPanel {
 		db.closeConnection();
 	}
 	
+	/**
+	 * This function updates the information about a old patient from database 
+	 */
 	public void updatingData ()
 	{   
 		SimpleDateFormat formatter = new SimpleDateFormat("dd-MM-yyyy");
@@ -614,33 +637,11 @@ public class Patientpanel extends JPanel {
 		db.closeConnection();
 	}
 
-	public void printComponenet(Component component){
-		  PrinterJob pj = PrinterJob.getPrinterJob();
-		  pj.setJobName(" Print Component ");
-
-		  pj.setPrintable (new Printable() {    
-		    public int print(Graphics pg, PageFormat pf, int pageNum){
-		      if (pageNum > 0){
-		      return Printable.NO_SUCH_PAGE;
-		      }
-
-		      Graphics2D g2 = (Graphics2D) pg;
-		      g2.translate(pf.getImageableX(), pf.getImageableY());
-		      component.paint(g2);
-		      return Printable.PAGE_EXISTS;
-		    }
-		  });
-		  if (pj.printDialog() == false)
-		  return;
-
-		  try {
-		        pj.print();
-		  } catch (PrinterException ex) {
-		        JOptionPane.showMessageDialog(new JFrame(), "Ba nu mere de printat");
-		  }
-		}
 	
-	
+	/**
+	 * This function is not finished , here i try to make a table in a word document and put all the data of a patient there 
+	 * but the ApachePOI can't construct complicated tables in word 
+	 */
 	public void makeDoc ()
 	{
 		try {

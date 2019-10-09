@@ -1,3 +1,8 @@
+/**
+ * A panel were user can search an old patient ,choose between result and see the old consultation
+ * 
+ * @author Vasile Antohi
+ */
 package old;
 
 import java.awt.Dimension;
@@ -33,7 +38,10 @@ public class Oldpatientpanel extends JPanel {
     protected DefaultListModel<String>  listModel = new DefaultListModel<String>();
     protected JList myList;
 	
-	
+	/**
+	 * Simple panel with 2 buttons and a search area where the user can find an old patient 
+	 * I am using a Jlist to print all the possible patient after a search 
+	 */
 	public Oldpatientpanel ()
 	{
 				
@@ -66,7 +74,10 @@ public class Oldpatientpanel extends JPanel {
 		
 		
 	}
-	
+	/**
+	 * This function adds functionality to buttons and the Jlist
+	 * When an element from Jlist is clicked user is directed to a panel with his information from database 
+	 */
 	public void addListeners ()
 	{
 		backButton.addActionListener(new ActionListener() {

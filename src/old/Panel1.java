@@ -39,7 +39,9 @@ public class Panel1  extends JPanel{
        
        this.addListeners();
    }
-
+ /**
+  * This function adds functionality to buttons
+  */
 	public void addListeners ()
 	{
 		newPatientButton.addActionListener(new ActionListener() {

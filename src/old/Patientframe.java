@@ -1,3 +1,8 @@
+/**
+ * Frame for the patientpanel
+ * 
+ * @author Vasile Antohi
+ */
 package old;
 
 import java.awt.Container;
