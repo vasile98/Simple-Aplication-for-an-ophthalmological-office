@@ -471,7 +471,6 @@ public class Patientpanel extends JPanel {
 				if(window == 0)	
 				{
 				savingData();
-				makeDoc();
 				}
 				else {
 					updatingData();
@@ -642,7 +641,7 @@ public class Patientpanel extends JPanel {
 	 * This function is not finished , here i try to make a table in a word document and put all the data of a patient there 
 	 * but the ApachePOI can't construct complicated tables in word 
 	 */
-	public void makeDoc ()
+/*	public void makeDoc ()
 	{
 		try {
 			SimpleDateFormat formatter = new SimpleDateFormat("dd-MM-yyyy");
@@ -691,5 +690,5 @@ public class Patientpanel extends JPanel {
 			System.out.print("Error when opening focx file");
 		}
 	}
-	
+	*/ 
 }
